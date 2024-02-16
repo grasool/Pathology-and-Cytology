@@ -29,7 +29,7 @@ import gc
 #             continue
 #         if os.path.isdir(model_path):
 #             subprocess.run(["python", "-m", "tf2onnx.convert",
-#                             "--saved-model", model_path,
+#                             "--saved-model", model_path,unam
 #                             "--output", onnx_model_path])
 #             print(f"Converted {model_name} to ONNX format.")
 # convert_models_to_onnx(source_dir="/mnt/d/Models/REMEDIS/Pretrained-Weights",
