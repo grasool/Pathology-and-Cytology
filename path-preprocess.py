@@ -237,7 +237,7 @@ class Slide:
         tissueDetectionUpsampleFactor=4,
         batchSize=20,
         numWorkers=1,
-        modelStateDictPath="/mnt/f/Projects/Multimodal-Transformer/models/deep-tissue-detector_densenet_state-dict.pt",
+        modelStateDictPath="./data/deep-tissue-detector_densenet_state-dict.pt",
     ):
         modelZip = tissueDetector(modelStateDictPath=modelStateDictPath)
         self.applyModel(
