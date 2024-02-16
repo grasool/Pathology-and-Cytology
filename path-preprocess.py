@@ -36,6 +36,11 @@ import gc
 #                        target_dir="/mnt/d/Models/REMEDIS/onnx")
 
 
+###to-do
+# set path of the image here: slide_image_path
+
+# onnx file path
+
 def get_random_svs_file(
     manifest_path="/mnt/d/TCGA-LUAD/manifest.json", data_path="/mnt/d/TCGA-LUAD/raw"
 ):
@@ -51,7 +56,7 @@ def get_random_svs_file(
 
 
 def tissueDetector(
-    modelStateDictPath="/mnt/f/Projects/Multimodal-Transformer/models/deep-tissue-detector_densenet_state-dict.pt",
+    modelStateDictPath="./data/deep-tissue-detector_densenet_state-dict.pt",
 ):
     data_transforms = transforms.Compose(
         [
@@ -347,7 +352,8 @@ class RemedisEmbeddings:
 
 
 def main():
-    slide_image_path = get_random_svs_file()
+    #slide_image_path = get_random_svs_file()
+    slide_image_path = "./data/mcc0001-slides001.svs"
 
     slide = Slide(
         slide_image_path,
@@ -358,7 +364,7 @@ def main():
     patches = slide.load_patches(target_patch_size=224)
 
     # Load the ONNX model
-    model_path = "/mnt/d/Models/REMEDIS/onnx/path-50x1-remedis-s.onnx"
+    model_path = "./data/path-50x1-remedis-s.onnx"
     providers = [
         (
             "CUDAExecutionProvider",
