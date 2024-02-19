@@ -1,0 +1,9 @@
+# Use the selector tool and create/install NVIDIA RAPIDS
+# https://docs.rapids.ai/install
+
+
+# install torch
+
+# onnxruntime
+
+# https://onnxruntime.ai/docs/install/
