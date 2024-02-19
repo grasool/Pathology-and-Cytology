@@ -352,9 +352,9 @@ class RemedisEmbeddings:
         pass
 
 
-def main():
+def main(slide_image_path):
     #slide_image_path = get_random_svs_file()
-    slide_image_path = "./data/mcc0001-slides001.svs"
+    #slide_image_path = "./data/mcc0001-slides001.svs"
 
     slide = Slide(
         slide_image_path,
