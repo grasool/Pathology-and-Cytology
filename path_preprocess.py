@@ -383,7 +383,8 @@ def main(slide_image_path):
     input_name = sess.get_inputs()[0].name
     label_name = sess.get_outputs()[0].name
     pred_onnx = sess.run([label_name], {input_name: patches})[0]
-    np.save('embedd.npy',pred_onnx)
+    save_file_name = slide_image_path[:-4] + ".npy"
+    np.save(save_file_name,pred_onnx)
     print(patches.shape, "->", pred_onnx.shape)
 
     del sess
