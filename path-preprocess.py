@@ -98,7 +98,7 @@ class Slide:
         tileSize=512,
         tileOverlap=0,
         max_patches=500,
-        visualize=False,
+        visualize=True,
     ):
         self.slide_image_path = slide_image_path
         self.slideFileName = Path(self.slide_image_path).stem
@@ -359,7 +359,7 @@ def main():
         slide_image_path,
         tileSize=512,
         max_patches=500,
-        visualize=False,
+        visualize=True,
     )
     patches = slide.load_patches(target_patch_size=224)
 
@@ -382,6 +382,7 @@ def main():
     input_name = sess.get_inputs()[0].name
     label_name = sess.get_outputs()[0].name
     pred_onnx = sess.run([label_name], {input_name: patches})[0]
+    np.save('embedd.npy',pred_onnx)
     print(patches.shape, "->", pred_onnx.shape)
 
     del sess
