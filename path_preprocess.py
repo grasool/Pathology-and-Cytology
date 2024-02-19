@@ -102,7 +102,7 @@ class Slide:
         visualize=True,
     ):
         self.slide_image_path = slide_image_path
-        self.slideFileName = Path(self.slide_image_path).stem
+        self.slideFileName = Path(self.slide_image_path)
         self.tileSize = tileSize
         self.tileOverlap = round(tileOverlap * tileSize)
         self.tileDictionary = {}
