@@ -40,6 +40,7 @@ import gc
 # set path of the image here: slide_image_path
 
 # onnx file path
+# there is some errors that I need to take care of s
 
 def get_random_svs_file(
     manifest_path="/mnt/d/TCGA-LUAD/manifest.json", data_path="/mnt/d/TCGA-LUAD/raw"
